@@ -3,10 +3,6 @@
   padding: 0;
 }
 body {
-  /*background-image: url(imgs/about.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;*/
   background-color: #ccc5b9;
 }
 .container {
@@ -67,11 +63,12 @@ button:hover {
   border: 3px solid #043927;
   text-decoration: underline;
 }
-.loginpart {
-}
 .loginlink {
   color: #ccc5b9;
-  text-decoration: underline;
   font-size: 0.8rem;
-  padding-left: 8vw;
+  padding-left: 14vw;
+}
+.submitbutton {
+  text-decoration: none;
+  color: #043927;
 }

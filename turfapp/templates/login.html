@@ -1,10 +1,23 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+    <style>
+      .img {
+        background-image: url("/static/imgs/about.png");
+        height: 83vh;
+        width: 30vw;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50px;
+        margin-top: 5vh;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -39,7 +52,9 @@
               >>> If you don't have an account</a
             >
           </div>
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" class="btn btn-primary">
+            <a href="home.html" class="submitbutton">Submit</a>
+          </button>
         </form>
       </div>
     </div>

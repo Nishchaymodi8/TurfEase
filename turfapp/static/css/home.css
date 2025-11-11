@@ -21,7 +21,7 @@ body {
       rgba(20, 20, 40, 0) 98%,
       #ccc5b9 100%
     ),
-    url("imgs/turfbg.png");
+    url("/static/imgs/turfbg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -144,7 +144,7 @@ li:hover::after {
 }
 
 .hero2-img {
-  background-image: url(imgs/about.png);
+  background-image: url("/static/imgs/about.png");
   height: 90vh;
   width: 40vw;
   background-repeat: no-repeat;
@@ -174,7 +174,7 @@ li:hover::after {
   justify-content: center;
 }
 .box1img {
-  background-image: url(imgs/football.jpg);
+  background-image: url("/static/imgs/football.jpg");
   height: 50vh;
   width: 20vw;
   background-position: center;
@@ -189,7 +189,7 @@ li:hover::after {
   text-align: center;
 }
 .box2img {
-  background-image: url(imgs/cricket.webp);
+  background-image: url("../imgs/cricket.webp");
   height: 50vh;
   width: 20vw;
   background-position: center;
@@ -199,7 +199,7 @@ li:hover::after {
   margin-top: 5vh;
 }
 .box3img {
-  background-image: url(imgs/pickelball.jpeg);
+  background-image: url("../imgs/pickelball.jpeg");
   height: 50vh;
   width: 20vw;
   background-position: center;

@@ -1,8 +1,12 @@
-. {
+* {
   margin: 0;
   padding: 0;
 }
 body {
+  /*background-image: url(imgs/about.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
   background-color: #ccc5b9;
 }
 .container {
@@ -11,7 +15,7 @@ body {
   height: 93vh;
   width: 70vw;
   background-color: #043927;
-  box-shadow: ;
+
   border-radius: 50px;
   display: flex;
   justify-content: space-around;
@@ -63,8 +67,15 @@ button:hover {
   border: 3px solid #043927;
   text-decoration: underline;
 }
+.loginpart {
+}
 .loginlink {
   color: #ccc5b9;
+  text-decoration: underline;
   font-size: 0.8rem;
-  padding-left: 14vw;
+  padding-left: 8vw;
+}
+.submitbutton {
+  text-decoration: none;
+  color: #043927;
 }
