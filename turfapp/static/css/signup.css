@@ -13,7 +13,7 @@ body {
   margin: auto;
   margin-top: 5vh;
   height: 93vh;
-  width: 70vw;
+  width: 80vw;
   background-color: #043927;
 
   border-radius: 50px;
@@ -67,8 +67,6 @@ button:hover {
   border: 3px solid #043927;
   text-decoration: underline;
 }
-.loginpart {
-}
 .loginlink {
   color: #ccc5b9;
   text-decoration: underline;
@@ -78,4 +76,7 @@ button:hover {
 .submitbutton {
   text-decoration: none;
   color: #043927;
+}
+.errorsection {
+  width: 40vw;
 }
