@@ -158,6 +158,22 @@
         border: 1px solid #043927;
         margin-top: 3vh;
       }
+      .hero2-button:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero2-button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 40px;
+        transition: border 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .hero2-button::before {
+        box-shadow: 0 0 20px rgba(204, 197, 185, 0.6);
+      }
 
       .hero2-img {
         background-image: url("/static/imgs/about.png");
@@ -168,6 +184,22 @@
         max-height: 100%;
         max-width: 100%;
         border-radius: 50px;
+      }
+      .hero2-img:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      }
+
+      .hero2-img::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 40px;
+        transition: border 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .hero2-img:hover::before {
+        box-shadow: 0 0 20px rgba(204, 197, 185, 0.6);
       }
 
       .hero3-heading {
@@ -181,49 +213,81 @@
         justify-content: space-around;
         margin-top: 8vh;
       }
-      .box1 {
+      .box1,
+      .box2,
+      .box3 {
         height: 80vh;
         width: 30vw;
         background-color: #043927;
-        border-radius: 50px;
+        border-radius: 40px;
         display: grid;
         justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
       }
-      .box1img {
-        background-image: url("/static/imgs/football.jpg");
-        height: 50vh;
-        width: 20vw;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 50px;
-        margin-top: 5vh;
+
+      .box1:hover,
+      .box2:hover,
+      .box3:hover {
+        transform: translateY(-15px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       }
+
+      .box1::before,
+      .box2::before,
+      .box3::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 40px;
+        border: 3px solid transparent;
+        transition: border 0.4s ease, box-shadow 0.4s ease;
+      }
+
+      .box1:hover::before,
+      .box2:hover::before,
+      .box3:hover::before {
+        border: 3px solid #ccc5b9;
+        box-shadow: 0 0 20px rgba(204, 197, 185, 0.6);
+      }
+
       .box1text {
-        font-size: 3rem;
+        font-size: 2.8rem;
         color: #ccc5b9;
         text-align: center;
+        transition: all 0.3s ease;
       }
-      .box2img {
-        background-image: url("/static/imgs/cricket.webp");
-        height: 50vh;
-        width: 20vw;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        border-radius: 50px;
-        margin-top: 5vh;
+
+      .box1:hover .box1text,
+      .box2:hover .box1text,
+      .box3:hover .box1text {
+        transform: scale(1.1);
+        color: #fff;
       }
+
+      .box1img,
+      .box2img,
       .box3img {
-        background-image: url("/static/imgs/pickelball.jpeg");
         height: 50vh;
         width: 20vw;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
-        border-radius: 50px;
+        border-radius: 40px;
         margin-top: 5vh;
+        transition: transform 0.5s ease;
       }
+
+      .box1:hover .box1img,
+      .box2:hover .box2img,
+      .box3:hover .box3img {
+        transform: scale(1.08);
+      }
+
       .faq {
         max-width: 90vw;
         margin: 80px auto;
@@ -431,7 +495,7 @@
         <div class="supportnav">
           <ul class="nav-ul">
             <div class="link1">
-              <li><a href="#" class="navlinks">View Turfs</a></li>
+              <li><a href="#" class="navlinks">Contact Us</a></li>
             </div>
             <div class="link2">
               <li><a href="#" class="navlinks">About us</a></li>
@@ -444,7 +508,7 @@
       </div>
       <div class="button-container">
         <button type="submit" class="login">
-          <a href="signup.html" class="loginlink">LOGIN /SIGN UP</a>
+          <a href="#" class="loginlink">View Turfs</a>
         </button>
       </div>
       <br /><br /><br /><br /><br /><br />
@@ -479,11 +543,11 @@
             <div class="box1img"></div>
             <p class="box1text">Football</p>
           </div>
-          <div class="box1">
+          <div class="box2">
             <div class="box2img"></div>
             <p class="box1text">Cricket</p>
           </div>
-          <div class="box1">
+          <div class="box3">
             <div class="box3img"></div>
             <p class="box1text">Pickleball</p>
           </div>
