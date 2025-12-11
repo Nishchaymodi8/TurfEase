@@ -119,7 +119,6 @@
       .loginlink {
         text-decoration: none;
         color: white;
-        cursor: pointer;
       }
       .loginlink:hover {
         color: white;
@@ -489,19 +488,21 @@
   <body class="m-1">
     <div class="herohome">
       <div class="navbar">
+        {% if request.session.email %}
         <div class="nav-container">
-          <a class="navbar-brand" href="#" id="logo">TurfEase</a>
+          <a class="navbar-brand" href="{% url 'home' %}" id="logo">TurfEase</a>
         </div>
         <div class="supportnav">
           <ul class="nav-ul">
             <div class="link1">
-              <li><a href="#" class="navlinks">Contact Us</a></li>
+              <li><a href="#" class="navlinks">About Us</a></li>
             </div>
             <div class="link2">
-              <li><a href="#" class="navlinks">About us</a></li>
+              <li><a href="{% url 'logout' %}" class="navlinks">Logout</a></li>
             </div>
           </ul>
         </div>
+        {% endif %}
       </div>
       <div class="mainhero">
         <p class="herop">TURF</p>
@@ -666,7 +667,7 @@
             pick the best turf. Customer support responded quickly when we had a
             timing question. Very useful app for casual players.”
           </p>
-          <p class="review1-2">Niti N.,Vastrapur</p>
+          <p class="review1-2">Nemesis N.,Vastrapur</p>
         </div>
       </div>
       <footer class="footer">

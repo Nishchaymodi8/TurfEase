@@ -5,16 +5,13 @@ from django.contrib.auth.hashers import make_password, check_password
 from .models import User, Role
 from turfapp.utils.validators import email_validator, password_validator
 
-def show_home_page(reaquest:HttpRequest):
-    if reaquest.method=="GET":
-        return render(reaquest,'home.html')
-    
-
 
 def show_login_page(request: HttpRequest):
     if request.method == "GET":
-        return render(request, 'login.html')
+        if request.session.get("email") is not None:
+            return redirect( 'home')
         
+        return render(request,"login.html")
     return login(request)
 
 def login(request: HttpRequest):
@@ -40,12 +37,16 @@ def login(request: HttpRequest):
            "error": "Wrong email or password"
        })
         
+    request.session["email"]=email
 
-    return redirect('/roles/')
+    response=redirect("home")
+    return response
     
 
 def show_signup_page(request: HttpRequest):
     if request.method == "GET":
+        if request.session.get("email")is not None:
+            return redirect("home")
         return render(request, 'signup.html')
     
     return signup(request)
@@ -92,7 +93,7 @@ def signup(request: HttpRequest):
     })
     
 
-def show_roles_page(request):
-    users = User.objects.all()
-    print("DEBUG USERS:", users)
-    return render(request, 'roles.html', {'users': users})
+
+def logout(request:HttpRequest):
+    request.session.flush()
+    return redirect("login")
