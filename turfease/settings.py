@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'turfapp',
     'home',
+    'category',
 ]
 
 MIDDLEWARE = [
