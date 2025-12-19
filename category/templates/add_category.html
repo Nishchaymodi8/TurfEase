@@ -1,83 +1,63 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Add category</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    {% include 'header.html' %}
-    <div class="container">
-      <form action="" method="post" class="row mt-5">
-        {% csrf_token %}
-        <div
-          class="col col-lg-4 offset-lg-4 col-md-6 offset-col-3 col-10 offset-1"
-        >
-          <div class="card shadow">
-            <div class="card-body p-4">
-              <div class="mb-5 mt-3">
-                <h3 class="text-center">Add a new category</h3>
-              </div>
-              <div class="mb-4">
-                <label for="name" class="form-label">category name</label>
-                <input
-                  type="text"
-                  required
-                  name="name"
-                  class="form-control"
-                  id="name"
-                  placeholder="Turf"
-                />
-                <div class="mb-4">
-                  <label for="description" class="form-label"
-                    >category description</label
-                  >
-                  <input
-                    type="text"
-                    name="description"
-                    id="description"
-                    class="form-control"
-                  />
-                </div>
-                <div class="mb-4 text-center">
-                  <button type="submit" class="btn btn-success">submit</button>
-                </div>
-              </div>
-            </div>
+{% include 'header.html' %}
+<div class="container">
+  <form method="post" action="{% url 'add-category' %}" class="row mt-5">
+    {% csrf_token %}
+    <div class="col col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-10 offset-1">
+      <div class="card shadow">
+        <div class="card-body p-4">
+          <div class="mb-5 mt-3">
+            <h3 class="text-center">Add a New Category</h3>
           </div>
-        </div>
-      </form>
-      {% if error is not None %}
-      <div class="row mt-4">
-        <div
-          class="col col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-10 offset-1"
-        >
-          <div
-            class="alert alert-danger mb-0 alert-dismissible fade show shadow"
-            role="alert"
-          >
-            {{ error }}
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"
-            ></button>
+          <div class="mb-4">
+            <label for="name" class="form-label">Category Name</label>
+            <input
+              required
+              name="name"
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Abc Xyz"
+            />
+          </div>
+          <div class="mb-4">
+            <label for="parent-category" class="form-label"
+              >Parent Category</label
+            >
+            <select
+              class="form-select"
+              name="parent-category"
+              id="parent-category"
+            >
+              <option value="" selected>[No parent]</option>
+              {% for category in categories %}
+              <option value="{{ category.id }}">{{ category.name }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="mb-4 d-grid">
+            <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </div>
       </div>
-      {% endif %}
     </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+  </form>
+  {% if error is not None %}
+  <div class="row mt-4">
+    <div class="col col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-10 offset-1">
+      <div
+        class="alert alert-danger mb-0 alert-dismissible fade show shadow"
+        role="alert"
+      >
+        {{ error }}
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</div>
+{% include 'footer.html' %}

@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('turfapp.urls')),
     path("",include("home.urls")),
-    path("",include("category.urls"),)
+    path("",include("category.urls")),
+        path("",include("products.urls")),
 ]

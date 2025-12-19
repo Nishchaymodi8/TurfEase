@@ -1,24 +1,27 @@
 {% include 'header.html' %}
 <div class="container">
-  <form method="post" action="{% url 'edit-category' %}" class="row mt-5">
+  <form method="post" action="{% url 'edit-product' %}" class="row mt-5">
     {% csrf_token %}
     <div class="col col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-10 offset-1">
       <div class="card shadow">
         <div class="card-body p-4">
           <div class="mb-5 mt-3">
-            <h3 class="text-center">Edit a Category</h3>
+            <h3 class="text-center">Edit Product</h3>
           </div>
-          <input type="hidden" name="id" value="{{ category_to_edit.id }}">
+          <input type="hidden" name="id" value="{{ product.id }}">
           <div class="mb-4">
-            <label for="name" class="form-label">Category Name</label>
-            <input value="{{ category_to_edit.name }}" required name="name" type="text" class="form-control" id="name" placeholder="Abc Xyz" />
+            <label for="name" class="form-label">Product Name</label>
+            <input required value="{{ product.name }}" name="name" type="text" class="form-control" id="name" placeholder="Abc Xyz" />
           </div>
           <div class="mb-4">
-            <label for="parent-category" class="form-label">Parent Category</label>
-            <select class="form-select" name="parent-category" id="parent-category">
-              <option value="">[No parent]</option>
+            <label for="price" class="form-label">Product Price</label>
+            <input required value="{{ product.price }}" name="price" type="number" class="form-control" id="price" placeholder="000" />
+          </div>
+          <div class="mb-4">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" name="category" id="category">
               {% for category in categories %}
-                <option {% if category_to_edit.parent_category.id == category.id %}{{ "selected" }}{% endif %} value="{{ category.id }}">{{ category.name }}</option>
+                <option {% if product_to_edit.category.id == category.id %}{{ "selected" }}{% endif %} value="{{ category.id }}">{{ category.name }}</option>
               {% endfor %}
             </select>
           </div>

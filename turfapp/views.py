@@ -37,7 +37,7 @@ def login(request: HttpRequest):
            "error": "Wrong email or password"
        })
         
-    request.session["email"]=email
+    request.session["email"]=email 
 
     response=redirect("home")
     return response
