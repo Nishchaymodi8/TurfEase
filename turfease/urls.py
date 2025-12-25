@@ -22,5 +22,8 @@ urlpatterns = [
     path('',include('turfapp.urls')),
     path("",include("home.urls")),
     path("",include("category.urls")),
-        path("",include("products.urls")),
+    path("",include("products.urls")),
+    path("turfs/",include("turfs.urls")),
+    path("",include("bookings.urls")),
+
 ]

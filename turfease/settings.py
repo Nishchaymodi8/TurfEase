@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'home',
     'category',
     'products',
+    'turfs',
+    'bookings'
 ]
 
 MIDDLEWARE = [

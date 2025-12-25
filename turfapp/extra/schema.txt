@@ -35,8 +35,6 @@ Name
 Location
 Price_per_hour
 Description
-Amenities (Lights, Parking, Washroom)
-Surface_type (Grass / Synthetic / Clay)
 Turf-CategoryId (FK)
 
 
