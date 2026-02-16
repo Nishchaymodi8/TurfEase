@@ -1,0 +1,9 @@
+here is the flow of turfease
+(turfease is project name)
+
+1.turfapp = home, login,signup
+2.home=home (ignore it)
+3.turfs=list_turf,turf_detail
+4.bookings=book_turf
+
+ignore= turf,category

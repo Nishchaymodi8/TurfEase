@@ -1,0 +1,81 @@
+. {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /*background-image: url(imgs/about.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;*/
+  background-color: #ccc5b9;
+}
+.container {
+  margin: auto;
+  margin-top: 5vh;
+  height: 93vh;
+  width: 70vw;
+  background-color: #043927;
+  box-shadow: ;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-around;
+}
+.img {
+  background-image: url(imgs/about.png);
+  height: 83vh;
+  width: 30vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50px;
+  margin-top: 5vh;
+}
+.formhead {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 8vh;
+  font-weight: bold;
+  color: #ccc5b9;
+}
+form {
+  color: #ccc5b9;
+  margin-left: 3vw;
+  font-size: 1rem;
+  margin-top: 3vh;
+}
+input {
+  margin-left: 2vw;
+  margin-bottom: 5vh;
+  background-color: #ccc5b9;
+  border-radius: 20px;
+  border: 1px solid #ccc5b9;
+  padding-left: 1vw;
+  font-size: 1rem;
+  font-family: "Times New Roman", Times, serif;
+}
+button {
+  height: 7vh;
+  width: 10vw;
+  font-size: 1rem;
+  border-radius: 50px;
+  border: 1px solid #ccc5b9;
+  background-color: #ccc5b9;
+  color: #043927;
+  margin-left: 3vw;
+  margin-top: 2vh;
+}
+button:hover {
+  border: 3px solid #043927;
+  text-decoration: underline;
+}
+.loginpart {
+}
+.loginlink {
+  color: #ccc5b9;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  padding-left: 8vw;
+}
+.submitbutton {
+  text-decoration: none;
+  color: #043927;
+}

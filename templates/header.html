@@ -1,9 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Turfease</title>
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <style>
       body {
         margin: 0;
@@ -50,8 +54,6 @@
 
       <div class="navbar-links">
         <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'list-category' %}">Categories</a>
-        <a href="{% url 'list-products' %}">Products</a>
         <a href="{% url 'list-turfs' %}">Turfs</a>
         <a href="{% url 'logout' %}">Log out</a>
       </div>
